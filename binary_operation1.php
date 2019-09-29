@@ -16,6 +16,7 @@ const ADDITION = 1;
 const SUBTRACTION = 2;
 const MULTIPLICATION = 3;
 const DIVISION = 4;
+const POWER = 5;
 
 /**
  * ユーザ入力を返します。
@@ -80,7 +81,8 @@ function ask_operation()
         . ADDITION . ":加算 "
         . SUBTRACTION . ":減算 "
         . MULTIPLICATION . ":乗算 "
-        . DIVISION . ":除算"
+        . DIVISION . ":除算 "
+        . POWER . ":累乗"
         . ")";
 
     $operation = 0;
@@ -96,7 +98,7 @@ function ask_operation()
             continue;
         }
 
-        $invalid = ($operation < 0) || ($operation > DIVISION);
+        $invalid = ($operation < 0) || ($operation > POWER);
         if ($invalid) {
             // 無効な入力
             echo "正しい番号を選択してください。" . PHP_EOL;
@@ -146,6 +148,12 @@ function execute($operation, $value1, $value2)
             }
             $expression = $value1 . " ÷ " . $value2;
             $result = floor($value1 / $value2) . "(余り " . $value1 % $value2 . ")";
+            break;
+
+        case POWER:
+            // 累乗
+            $expression = $value1 . " ^ " . $value2;
+            $result = pow($value1, $value2);
             break;
     }
 
