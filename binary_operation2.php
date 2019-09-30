@@ -9,11 +9,13 @@ require_once "Addition.php";
 require_once "Substraction.php";
 require_once "Multiplication.php";
 require_once "Division.php";
+require_once "Power.php";
 
 use BinalyOperation2\Operator\Addition;
 use BinalyOperation2\Operator\Substraction;
 use BinalyOperation2\Operator\Multiplication;
 use BinalyOperation2\Operator\Division;
+use BinalyOperation2\Operator\Power;
 
 // 入力値の最小
 const MIN_VALUE = -99999;
@@ -29,6 +31,7 @@ $operation_list = [
     $sub = new Substraction(),
     $mul = new Multiplication(),
     $div = new Division(),
+    $pow = new Power(),
 ];
 
 /**
