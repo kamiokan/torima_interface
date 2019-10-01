@@ -1,19 +1,16 @@
 <?php
 
-namespace BinalyOperation2\Operator;
+namespace BinaryOperation3\Operator;
 
-use BinalyOperation2\IBinaryOperator;
+use BinaryOperation3\StandardOperator;
 
-require_once "IBinaryOperator.php";
+require_once "StandardOperator.php";
 
 /**
  * 累乗です。
  */
-class Power implements IBinaryOperator
+class Power extends StandardOperator
 {
-    private $expression;
-    private $result;
-
     public function getChoiceString()
     {
         return "累乗";
@@ -23,27 +20,5 @@ class Power implements IBinaryOperator
     {
         $this->expression = $value1 . " ^ " . $value2;
         $this->result = pow($value1, $value2);
-    }
-
-    public function isError()
-    {
-        // エラーが発生することは無いので、常にfalse
-        return false;
-    }
-
-    public function getErrorMessage()
-    {
-        // エラーが発生することは無いので、常にnull
-        return NULL;
-    }
-
-    public function getExpression()
-    {
-        return $this->expression;
-    }
-
-    public function getResult()
-    {
-        return $this->result;
     }
 }

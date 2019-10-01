@@ -9,15 +9,13 @@ require_once "use_abstract_class/Addition.php";
 require_once "use_abstract_class/Substraction.php";
 require_once "use_abstract_class/Multiplication.php";
 require_once "use_abstract_class/Division.php";
-
-//require_once "use_abstract_class/Power.php";
+require_once "use_abstract_class/Power.php";
 
 use BinaryOperation3\Operator\Addition;
 use BinaryOperation3\Operator\Substraction;
 use BinaryOperation3\Operator\Multiplication;
 use BinaryOperation3\Operator\Division;
-
-//use BinaryOperation3\Operator\Power;
+use BinaryOperation3\Operator\Power;
 
 // 入力値の最小
 const MIN_VALUE = -99999;
@@ -33,7 +31,7 @@ $operation_list = [
     $sub = new Substraction(),
     $mul = new Multiplication(),
     $div = new Division(),
-    //$pow = new Power(),
+    $pow = new Power(),
 ];
 
 /**
